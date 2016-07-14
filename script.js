@@ -33,11 +33,11 @@ Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
         return bot.setProp('something', something)
           switch(something){
             case "THING":
-              .then(() => bot.say(`You said: ${something}`))
+              .then(() => bot.say('You said: ${something}'))
             case: "YO":
-              .then(() => bot.say(`Yo dawg))
-
+              .then(() => bot.say('Yo dawg'))
             default:
+              .then(() => bot.say('Did not work'))
           }
       }
     },
