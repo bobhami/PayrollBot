@@ -22,8 +22,24 @@ module.exports = new Script({
             return bot.setProp('name', name)
                 .then(() => bot.say(`Great! I'll call you ${name}
 Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
-                .then(() => 'finish');
+                .then(() => 'askCase');
         }
+    },
+
+    askCase: {
+      prompt:(bot) => bot.say('Say something - THING, WHATEVER, YO'),
+      receive: (bot, message) => {
+        const something = message.text;
+        return bot.setProp('something', something)
+          switch(something){
+            case "THING":
+              .then(() => bot.say(`You said: ${something}`))
+            case: "YO":
+              .then(() => bot.say(`Yo dawg))
+
+            default:
+          }
+      }
     },
 
     finish: {
