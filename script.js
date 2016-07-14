@@ -27,20 +27,16 @@ Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
     },
 
     askCase: {
-      prompt:(bot) => bot.say('Say something - THING, WHATEVER, YO'),
-      receive: (bot, message) => {
-        const something = message.text;
-        return bot.setProp('something', something)
-          switch(something){
-            case "THING":
-              .then(() => bot.say('You said: ${something}'))
-            case: "YO":
-              .then(() => bot.say('Yo dawg'))
-            default:
-              .then(() => bot.say('Did not work'))
-          }
-      }
+        prompt: (bot) => bot.say('Say something - THING, WHATEVER'),
+        receive: (bot, message) => {
+          const something = message.text;
+            return bot.setProp('something', something)
+                .then(() => bot.say(`Great! I'll call you ${something}
+Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
+                .then(() => 'askCase');
+        }
     },
+
 
     finish: {
         receive: (bot, message) => {
