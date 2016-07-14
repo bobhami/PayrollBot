@@ -11,7 +11,8 @@ const SmoochCore = require('smooch-core');
 const jwt = require('../jwt');
 
 const name = 'SmoochBot';
-const avatarUrl = 'https://s.gravatar.com/avatar/f91b04087e0125153623a3778e819c0a?s=80';
+//const avatarUrl = 'https://s.gravatar.com/avatar/f91b04087e0125153623a3778e819c0a?s=80';
+const avatarUrl ='http://icons.veryicon.com/png/Movie%20%26%20TV/Futurama%20Vol.%204%20-%20The%20Robots/Calculon.png';
 const store = new SmoochApiStore({
     jwt
 });
